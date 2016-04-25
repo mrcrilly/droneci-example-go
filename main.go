@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 )
 
-func M(n int) int {
-	return n * n
+func index(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello, world!\n\n")
 }
 
 func main() {
-	fmt.Println("Nothing to see here.")
+	http.HandleFunc("/", index)
+	http.ListenAndServe("0.0.0.0:8080", nil)
 }

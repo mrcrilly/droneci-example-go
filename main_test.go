@@ -4,6 +4,6 @@ import (
 	"testing"
 )
 
-func TestM(t *testing.T) {
+func TestNothing(t *testing.T) {
 	return
 }
